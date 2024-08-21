@@ -1,3 +1,4 @@
+console.log("PRIMERA PARTE")
 // EJERCICIO 1 Creación de un Objeto Básico
 console.log("\nEjercicio 1:")
 
