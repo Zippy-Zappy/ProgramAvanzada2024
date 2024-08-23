@@ -15,7 +15,14 @@ const obtenerUsuarios = async function(api){
     return usuarios
 }
 
-obtenerUsuarios(API).then(console.log)
+obtenerUsuarios(API).then(usuarios => {
+    usuarios.forEach(user => {
+        console.log(user)
+    })
+    imprimirNombresDeUsuarios(usuarios)
+    console.log(autenticarUsuario(persona, usuarios))
+    //mapearUsuarios(usuarios)
+})
 //const usuarios = await obtenerUsuarios(API).then(console.log)
 //console.log(usuarios)
 
@@ -28,41 +35,45 @@ const imprimirNombresDeUsuarios = function(users){
 }
 
 
-obtenerUsuarios(API).then(imprimirNombresDeUsuarios)
-// const imprimirNombresDeUsuarios = function(api){
-//     const peticion = fetch(api)
+//obtenerUsuarios(API).then(imprimirNombresDeUsuarios)
 
-//     peticion.then(resp => resp.json())
-//     .then(users => {
-//         users.forEach(usuario => {
-//             console.log(usuario.name) 
-//         });
-//     }).catch(console.warn)
+
+console.log("\nEjercicio 3:")
+//3. Autenticación Simulada
+const persona = {
+    username: "Bret",
+    name: "Leanne Graham"
+}
+
+const autenticarUsuario = function(credencial, usuarios){
+        usuarios.forEach(user => {
+            if ((credencial.username === user.username) && (credencial.name === user.name)){
+                return true
+            }
+            return false
+        })
+    }
+
+console.log("\nEjercicio 4:")
+// 4. Transformación de Datos
+const mapearUsuarios = function(array){
+    const nuevoArray = [{
+        name:
+
+    }]
+    array.forEach(users => {
+        console.log(users.name, users.email)
+    })
+}
+
+console.log("\nEjercicio 5:")
+// 5. Validación de Formularios:
+// const objeto = {
+//     name: "Juan",
+//     email: "Juan@mail.com",
+//     password: ""
 // }
-// imprimirNombresDeUsuarios(API)
+// const validarFormulario = function(campo){
+//     if 
 
-// console.log("\nEjercicio 3:")
-// // 3. Autenticación Simulada
-// const persona = {
-//     username: "Bret",
-//     name: "Leanne Graham"
 // }
-
-// const autenticarUsuario = function(credencial){
-//     const peticion = fetch(API)
-
-//     return peticion.then(resp => resp.json())
-//     .then(users =>{
-//         users.forEach(usuario =>{
-//             if ((credencial.username === usuario.username) && (credencial.name === usuario.name)){
-//                 return true
-//             }
-//         })
-//         return false
-//     })
-// }
-
-// console.log(autenticarUsuario(persona))
-
-// console.log("\nEjercicio 4:")
-//4. Transformación de Datos
