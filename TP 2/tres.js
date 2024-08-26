@@ -56,15 +56,15 @@ const autenticarUsuario = function(credencial, usuarios){
 
 console.log("\nEjercicio 4:")
 // 4. Transformación de Datos
-const mapearUsuarios = function(array){
-    const nuevoArray = [{
-        name:
+// const mapearUsuarios = function(array){
+//     const nuevoArray = [{
+//         name:
 
-    }]
-    array.forEach(users => {
-        console.log(users.name, users.email)
-    })
-}
+//     }]
+//     array.forEach(users => {
+//         console.log(users.name, users.email)
+//     })
+// }
 
 console.log("\nEjercicio 5:")
 // 5. Validación de Formularios:
