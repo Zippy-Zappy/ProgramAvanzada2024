@@ -1,4 +1,4 @@
-export const Task = ({task, setTask}) => {
+export const Task = ({task, onDelete}) => {
     const {project,
         typeTask,
         nameDev,
@@ -8,11 +8,9 @@ export const Task = ({task, setTask}) => {
         summary} = task
     return (
         <div className="relative mx-5 my-10 bg-white shadow-md px-5 py-10 rouded-xl">
-            <button className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white uppercase font-bold rounded"
-            type="submit"
-            // onClick={
-            //     onDelete
-            // }
+            <button className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white uppercase font-bold rounded px-2 py-1"
+            type="button"
+            onClick={onDelete}
             >Delete</button>
         <p className="font-bold mb-3 text-gray-700 uppercase">Project: {''}
             <span className="font-normal normal-case">{project}</span>

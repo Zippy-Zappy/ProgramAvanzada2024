@@ -1,6 +1,9 @@
 import { Task } from "./Task"
 
-export const TaskList = ({ tasks }) => {
+export const TaskList = ({ tasks, setTasks }) => {
+    const onDelete = (project) => {
+        setTasks((previousTasks) => previousTasks.filter(task => task.project !== project))
+    }
     console.log(tasks)
 
     return (
@@ -13,7 +16,7 @@ export const TaskList = ({ tasks }) => {
             <Task 
             key={task.project}
             task={task}
-            // onDelete={() => setTasks(tasks.filter(t => t.id !== task.id))}
+            onDelete={() => onDelete(task.project)}
             />
         ))}
       </div>
