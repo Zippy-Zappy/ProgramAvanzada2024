@@ -9,15 +9,13 @@ export const TaskList = ({ tasks }) => {
         <p className="text-xl mt-5 mb-10 text-center">Manage current {''} 
         <span className="text-indigo-600 font-bold">tasks</span> here
         </p>
-  
         { tasks.map(task => (
             <Task 
             key={task.project}
             task={task}
+            // onDelete={() => setTasks(tasks.filter(t => t.id !== task.id))}
             />
         ))}
-        <button className="bg-indigo-600 hover:bg-indigo-700 w-full mt-5 p-2 text-white uppercase font-bold rounded"
-        type="submit">Add task</button>
       </div>
     )
 }
